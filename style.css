@@ -57,10 +57,12 @@ body {
     overflow-x: hidden;
   }
   
-h1, h2 {
+h1, h2, h3 {
     font-family: 'League Spartan';
     font-weight: 600;
   }
+
+
   
 main {
     /* opacity: 10%; */
@@ -94,7 +96,7 @@ nav {
 #nav-links {  
     display: grid;
     gap: clamp(1rem, 2vw, 2rem);
-    margin-top: clamp(5rem, 2vw, 3rem);
+    margin-top: clamp(4rem, 2vw, 3rem);
     padding: 0rem clamp(1rem, 2vw, 2rem);
     transform: translateX(5vw) scale(0.9);
     transition: transform 500ms cubic-bezier(.13,.53,.38,.97); 
@@ -131,6 +133,7 @@ body[data-nav="true"] > nav > #nav-links {
     top: 3rem;
     border: none;
     cursor: pointer;
+    /* mix-blend-mode: difference; */
     /* transition: transform, background-color;
     shadow: 0vh 0vh 4vh rgba(0 0 0 / 35%); 
     border-radius: 5rem;
@@ -196,7 +199,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 
 
 
-.hero {
+.hero, .ending {
     height: 75dvh;
     width: 100dvw;
     background-color: var(--main-bg-color);
@@ -204,8 +207,7 @@ body[data-nav="true"] > #nav-toggle > .close {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
 .title-card {
@@ -237,11 +239,18 @@ body[data-nav="true"] > #nav-toggle > .close {
     align-self: flex-end;
 }
 
-/* .hero h2 {
-    font-size: 8dvh;
-    font-weight: 700;
+.ending h2 {
+    font-size: 5dvw;
+    font-weight: 900;
+    line-height: 100%;
+    margin: 0;
     align-self: center; 
-}*/
+}
+
+.ending h3 {
+    align-self: center; 
+    font-weight: 500;
+  }
 
 .section {
     height: 100dvh;
@@ -260,7 +269,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 .showreels{ 
     height: 80vh;
     width: 80vw;
-    background-image: url("https://images.unsplash.com/photo-1666032234128-abc3e45bd1dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
+    /* background-image: url("https://images.unsplash.com/photo-1533280385001-c32ffcbd52a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-position: center 0%;
     background-size: cover;
     position: absolute;
