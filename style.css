@@ -59,7 +59,7 @@ body {
   
 h1, h2, h3 {
     font-family: 'League Spartan';
-    font-weight: 600;
+    font-weight: 800;
   }
 
 
@@ -155,7 +155,7 @@ body[data-nav="true"] > nav > #nav-links {
     border: none;
     border-radius: 5rem;
     outline: none;
-    box-shadow: 0vh 0vh 4vh rgba(0 0 0 / 35%);
+    /* box-shadow: 0vh 0vh 4vh rgba(0 0 0 / 35%); */
     cursor: pointer;
     transition: transform, background-color;
     transition-timing-function: ease;
@@ -171,7 +171,7 @@ body[data-nav="true"] > nav > #nav-links {
 }
 
 body[data-nav="true"] > #nav-toggle {
-    background-color: rgb(85, 130, 149);
+    background-color: rgb(255, 255, 255);
 }
 
 body:not([data-nav="true"]) > #nav-toggle:hover > .open {
@@ -192,6 +192,9 @@ body:not([data-nav="true"]) > #nav-toggle:hover > .open {
     transition-duration: 400ms;
 }
 
+body[data-nav="true"] > #nav-toggle > i {
+    color: #b68e71;
+}
 body[data-nav="true"] > #nav-toggle > .close {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -200,8 +203,8 @@ body[data-nav="true"] > #nav-toggle > .close {
 
 
 .hero, .ending {
-    height: 75dvh;
-    width: 100dvw;
+    height: 75vh;
+    width: 100vw;
     background-color: var(--main-bg-color);
     overflow: hidden;
     display: flex;
@@ -211,7 +214,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 }
 
 .title-card {
-    padding-top: 10dvw;
+    /* padding-top: 10dvw; */
     height: fit-content;
     width: fit-content;
     overflow: hidden;
@@ -221,7 +224,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 }
 
 .hero h1 {
-    font-size: 25dvw;
+    font-size: 25vw;
     font-weight: 900;
     /* letter-spacing: -1rem; */
     line-height: 100%;
@@ -232,7 +235,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 }
 
 .hero h2 {
-    font-size: 5dvw;
+    font-size: 5vw;
     font-weight: 900;
     line-height: 100%;
     margin: 0;
@@ -240,7 +243,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 }
 
 .ending h2 {
-    font-size: 5dvw;
+    font-size: 5vw;
     font-weight: 900;
     line-height: 100%;
     margin: 0;
@@ -253,14 +256,14 @@ body[data-nav="true"] > #nav-toggle > .close {
   }
 
 .section {
-    height: 100dvh;
-    width: 100dvw;
+    height: 100vh;
+    width: 100vw;
     background-color: var(--main-bg-color);
     overflow: hidden;
 }
 
 .card-showreels{
-    height: 100dvh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,11 +282,146 @@ body[data-nav="true"] > #nav-toggle > .close {
     overflow: hidden;
 }
 
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index:-100;
-  }
+video, img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+    @media screen and (max-width: 840px) {
+        main {
+            /* opacity: 10%; */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+
+        body[data-nav="true"] > main {
+            transform: translateX(-85vw);
+        }
+
+        nav {
+            height: 100%;
+            width: 85vw;
+            position: fixed;
+            left: 20vw;
+            bottom: 0px;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #nav-links {  
+            display: grid;
+            gap: clamp(1rem, 2vw, 2rem);
+            margin-top: clamp(10rem, 2vw, 3rem);
+            padding: 0rem clamp(1rem, 2vw, 2rem);
+            transform: translateX(5vw) scale(0.9);
+            transition: transform 500ms cubic-bezier(.13,.53,.38,.97); 
+        }
+
+        body[data-nav="true"] > nav > #nav-links {
+            transform: translateX(0%) scale(1);
+        }
+
+        #nav-links > .nav-link {
+            text-decoration: none;
+        }
+
+        #nav-links > .nav-link > .nav-link-label {
+            color: #fbfaf5;
+            font-size: 3.25rem;
+            font-weight: 800;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        #nav-links > .nav-link > .nav-link-image {
+            display: none;
+            /* width: max(45vw);
+            aspect-ratio: 2.5 / 1;
+            border-radius: 0.5rem;
+            margin-top: 0.75rem;
+            object-fit: cover; */
+        }
+
+        .logosvg {
+            height: 5vh;
+            position: fixed;
+            z-index: 9;
+            margin-left: 3vw;
+            top: 3rem;
+            border: none;
+            cursor: pointer;
+            /* mix-blend-mode: difference; */
+            /* transition: transform, background-color;
+            shadow: 0vh 0vh 4vh rgba(0 0 0 / 35%); 
+            border-radius: 5rem;
+            outline: none;
+            background-color: #b68e71;
+            transition-timing-function: ease;
+            transition-duration: 400ms;*/
+        }
+
+        #nav-toggle {
+            height: 5vh;
+            width: 5vh;
+            position: fixed;
+            z-index: 3;
+            right: 10;
+            top: 2rem;
+            transform: translateX(-50%);
+            border: none;
+            border-radius: 5rem;
+            outline: none;
+            cursor: pointer;
+            transition: transform, background-color;
+            transition-timing-function: ease;
+            transition-duration: 400ms;
+        }
+
+        #nav-toggle:hover {
+            transform: translateX(-50%) scale(1.04);
+        }
+
+        #nav-toggle:active {
+            transform: translateX(-50%) scale(0.96);
+        }
+
+
+        body:not([data-nav="true"]) > #nav-toggle:hover > .open {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        #nav-toggle > i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            color: rgb(246, 231, 224);
+            font-size: 2vh;
+            opacity: 0;
+            transition: transform, opacity;
+            transition-timing-function: ease;
+            transition-duration: 400ms;
+        }
+
+        body[data-nav="true"] > #nav-toggle > .close {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        
+
+    }
