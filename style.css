@@ -273,11 +273,11 @@ body[data-nav="true"] > #nav-toggle > .close {
 .showreels{ 
     height: 80vh;
     width: 80vw;
+    /* align-content: center;
+    justify-content: center; */
     /* background-image: url("https://images.unsplash.com/photo-1533280385001-c32ffcbd52a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-position: center 0%;
     background-size: cover;
-    position: absolute;
-    justify-self: center;
     border-radius: 3rem;
     z-index: 4;
     overflow: hidden;
