@@ -225,7 +225,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 .hero {
     height: 100vh;
     width: 100vw;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -319,7 +319,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 
     height: 100vh;
     width: 100vw;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -335,7 +335,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 }
 
 .sectionx {
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -370,8 +370,6 @@ body[data-nav="true"] > #nav-toggle > .close {
     padding-top: 3rem;
     /* padding-block: 6rem; */
     border-radius: 3rem;
-
-
 }
 
     .card {
