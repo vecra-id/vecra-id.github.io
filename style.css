@@ -250,7 +250,7 @@ body[data-nav="true"] > #nav-toggle > .close {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-content: flex-end;
+    align-items: flex-end;
     position: relative;
     /* padding-top: 10%; */
 }
@@ -265,7 +265,7 @@ body[data-nav="true"] > #nav-toggle > .close {
     /* letter-spacing: -1rem; */
     line-height: 100%;
     margin: 0;
-    margin-bottom: -5vw;
+    margin-bottom: -9vw;
     
 }
 
