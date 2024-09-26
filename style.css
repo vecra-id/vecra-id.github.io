@@ -713,9 +713,7 @@ body[data-nav="true"] > #nav-toggle > .close {
           transition: all 350ms ease;
     
       }
-      .tile:hover { 
-    
-      }
+
     
       .scale-anm {
         transform: scale(1);
@@ -764,13 +762,13 @@ body[data-nav="true"] > #nav-toggle > .close {
           background-color: rgba(0, 0, 0, 0);
       }
     
-/*      .btn:hover {
+     .btn:hover {
         text-decoration: none;
         background-color: rgba(46, 46, 46, 0);
 
 
       }
-    */
+    
       .btn:focus {
         outline: none;
         border-color: var(--darken-2);
