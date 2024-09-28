@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio">
+    <meta name="keywords" content="Research and Development, UI/UX Designer, Product Designer">
+    <meta name="author" content="fakhrirozann">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>VECRA CREATIVE WORKS</title>
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      /* General Styling */
+      body {
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+
+      /* Toolbar Buttons */
+      .toolbar {
+        margin: 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #555;
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .tile {
+        width: calc(20% - 20px); /* Adjust width to allow for gap */
+        margin: 10px; /* Gap between items */
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative; /* Positioning context for img */
+        cursor: pointer; /* Indicate clickability */
+      }
+
+      .tile img {
+        width: 100%; /* Fill width of the tile */
+        height: 100%; /* Fill height of the tile */
+        object-fit: cover; /* Maintain aspect ratio and cover the area */
+        display: block; /* Ensure images take full width of their container */
+      }
+
+      /* Scale Animation */
+      .scale-anm {
+        transform: scale(1);
+        transition: transform 0.5s ease;
+      }
+
+      .tile:not(.scale-anm) {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+
+      .tile.scale-anm {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      /* Popup Modal Styling */
+      #modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: hidden; /* Disable scroll */
+        background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+      }
+
+      #modal img {
+        margin: auto;
+        display: block;
+        max-width: 100vw; /* Adjust max width */
+        max-height: 100%; /* Adjust max height */
+        position: absolute;
+        top: 50%; /* Center the image */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centering */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .tile {
+          width: calc(50% - 20px); /* Two columns on medium screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tile {
+          width: calc(100% - 20px); /* Single column on small screens */
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <!-- Filter Buttons -->
+    <div class="toolbar">
+      <button class="btn fil-cat" data-rel="all">All</button>
+      <button class="btn fil-cat" data-rel="web">Websites</button>
+      <button class="btn fil-cat" data-rel="flyers">Flyers</button>
+      <button class="btn fil-cat" data-rel="bcards">Business Cards</button>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+      <div class="tile scale-anm web all" data-index="0">
+        <img src="https://picsum.photos/347/409" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="1">
+        <img src="https://picsum.photos/254/380" alt="Business Card">
+      </div>
+      <div class="tile scale-anm flyers all" data-index="2">
+        <img src="https://picsum.photos/203/371" alt="Flyer">
+      </div>
+      <div class="tile scale-anm web all" data-index="3">
+        <img src="https://picsum.photos/289/309" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="4">
+        <img src="https://picsum.photos/337/293" alt="Business Card">
+      </div>
+      <div class="tile scale-anm flyers all" data-index="5">
+        <img src="https://picsum.photos/298/212" alt="Flyer">
+      </div>
+      <div class="tile scale-anm web all" data-index="6">
+        <img src="https://picsum.photos/215/328" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="7">
+        <img src="https://picsum.photos/287/239" alt="Business Card">
+      </div>
+      <div class="tile scale-anm flyers all" data-index="8">
+        <img src="https://picsum.photos/236/324" alt="Flyer">
+      </div>
+      <div class="tile scale-anm web all" data-index="9">
+        <img src="https://picsum.photos/278/296" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="10">
+        <img src="https://picsum.photos/354/300" alt="Business Card">
+      </div>
+      <div class="tile scale-anm flyers all" data-index="11">
+        <img src="https://picsum.photos/222/369" alt="Flyer">
+      </div>
+      <div class="tile scale-anm web all" data-index="12">
+        <img src="https://picsum.photos/279/307" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="13">
+        <img src="https://picsum.photos/242/304" alt="Business Card">
+      </div>
+      <div class="tile scale-anm flyers all" data-index="14">
+        <img src="https://picsum.photos/300/353" alt="Flyer">
+      </div>
+      <div class="tile scale-anm web all" data-index="15">
+        <img src="https://picsum.photos/292/352" alt="Website">
+      </div>
+      <div class="tile scale-anm bcards all" data-index="16">
+        <img src="https://picsum.photos/301/243" alt="Business Card">
+      </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="modal">
+      <img src="" alt="Popup Image" id="modal-image">
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        var images = $("#portfolio .tile img").map(function() {
+          return $(this).attr("src");
+        }).get();
+
+        // Display all portfolio items by default
+        var selectedClass = "all";
+        
+        // When any filter button is clicked
+        $(".fil-cat").click(function(e) {
+          e.preventDefault();
+          selectedClass = $(this).attr("data-rel");
+
+          // Fade out the "portfolio" section and filter items based on the selected class
+          $("#portfolio").fadeTo(100, 0.1);
+
+          if (selectedClass === "all") {
+            $("#portfolio .tile").fadeIn().addClass('scale-anm');
+          } else {
+            $("#portfolio .tile").not("." + selectedClass).fadeOut().removeClass('scale-anm');
+
+            setTimeout(function() {
+              $("." + selectedClass).fadeIn().addClass('scale-anm');
+            }, 300);
+          }
+
+          // Fade back the "portfolio" to full visibility
+          $("#portfolio").fadeTo(300, 1);
+        });
+
+        // Trigger the "All" filter on page load to show all items initially
+        $(".fil-cat[data-rel='all']").click();
+
+        // Open modal on image click
+        $("#portfolio .tile").click(function() {
+          var index = $(this).data("index");
+          openModal(index);
+        });
+
+        // Function to open modal
+        function openModal(index) {
+          $("#modal-image").attr("src", images[index]);
+          $("#modal").fadeIn();
+          $(document).on("keydown", handleKeyPress);
+        }
+
+        // Close modal when clicking outside image or pressing Escape
+        $("#modal").click(function(e) {
+          if (e.target.id === "modal") {
+            closeModal();
+          }
+        });
+
+        function closeModal() {
+          $("#modal").fadeOut();
+          $(document).off("keydown", handleKeyPress);
+        }
+
+        // Handle keyboard navigation
+        function handleKeyPress(e) {
+          if (e.key === "Escape") {
+            closeModal();
+          } else if (e.key === "ArrowRight") {
+            // Navigate to next image
+            var currentIndex = images.indexOf($("#modal-image").attr("src"));
+            var nextIndex = (currentIndex + 1) % images.length;
+            openModal(nextIndex);
+          } else if (e.key === "ArrowLeft") {
+            // Navigate to previous image
+            var currentIndex = images.indexOf($("#modal-image").attr("src"));
+            var prevIndex = (currentIndex - 1 + images.length) % images.length;
+            openModal(prevIndex);
+          }
+        }
+      });
+    </script>
+  
+  </body>
+</html>
