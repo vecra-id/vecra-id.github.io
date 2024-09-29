@@ -16,3 +16,32 @@ function closeModal() {
 }
 
 
+$(document).ready(function() {
+  var selectedClass = "";
+
+  // Click event for filter buttons
+  $(".fil-cat").click(function(e) {
+    e.preventDefault(); // Prevent the default behavior of the button
+
+    selectedClass = $(this).attr("data-rel"); // Get the data-rel attribute of the clicked button
+
+    // Fade out the whole portfolio to start the transition
+    $("#portfolio").fadeTo(100, 0.1);
+
+    // If "all" is selected, show all items
+    if (selectedClass === "all") {
+      $("#portfolio div").fadeIn().addClass('scale-anm');
+    } else {
+      // Otherwise, show only the selected category
+      $("#portfolio div").not("." + selectedClass).fadeOut().removeClass('scale-anm');
+      
+      // After a short delay, fade in the filtered items
+      setTimeout(function() {
+        $("." + selectedClass).fadeIn().addClass('scale-anm');
+      }, 300);
+    }
+
+    // Fade back in the portfolio to full visibility
+    $("#portfolio").fadeTo(300, 1);
+  });
+});
